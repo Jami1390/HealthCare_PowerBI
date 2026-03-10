@@ -1,0 +1,260 @@
+table -Measures
+	lineageTag: 167188f1-ee35-489b-9be8-b5da5754b4e7
+
+	measure 'Count of Gender total for Admission Type' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Gender]),
+				ALL('healthcare_project_3'[Admission Type])
+			)
+		formatString: 0
+		lineageTag: a9445832-2728-49d6-b7b2-e71b8b1791be
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "TotalForAllCategory"
+				}
+
+	measure 'Count of Gender average per Admission Type' =
+			
+			AVERAGEX(
+				KEEPFILTERS(VALUES('healthcare_project_3'[Admission Type])),
+				CALCULATE(COUNTA('healthcare_project_3'[Gender]))
+			)
+		lineageTag: ed72b04e-a7bd-44b3-aa71-7a93158610ff
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "AveragePerCategory"
+				}
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Count of Date of Admission for Elective' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Admission Type] IN { "Elective" }
+			)
+		formatString: 0
+		lineageTag: 1a11707e-bc00-4396-bb6d-7e5c7ac53ec8
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Emergency' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Admission Type] IN { "Emergency" }
+			)
+		formatString: 0
+		lineageTag: 5ba6026c-1f49-4e47-8a48-6b4943f0e212
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Urgent' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Admission Type] IN { "Urgent" }
+			)
+		formatString: 0
+		lineageTag: d6d2b2c4-ab7e-4ec9-a866-8d5c32e67d5e
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Arthritis' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Arthritis" }
+			)
+		formatString: 0
+		lineageTag: ec292a1d-65ea-4e12-8d02-3f463498cbc1
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Arthritis 2' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Arthritis" }
+			)
+		formatString: 0
+		lineageTag: 819f2e04-ca75-4732-96c7-76c88f88b5b5
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Asthma' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Asthma" }
+			)
+		formatString: 0
+		lineageTag: d19df671-c3c8-4202-b482-ce6c620a6697
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Cancer' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Cancer" }
+			)
+		formatString: 0
+		lineageTag: fc97271c-6785-4391-bc34-e6cf58a2412b
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Diabetes' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Diabetes" }
+			)
+		formatString: 0
+		lineageTag: 1a9591a3-7624-4340-83a5-869257859679
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Hypertension' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Hypertension" }
+			)
+		formatString: 0
+		lineageTag: d6097ac4-b196-4d99-aaf5-06e227756048
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Obesity' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Medical Condition] IN { "Obesity" }
+			)
+		formatString: 0
+		lineageTag: 51eeb8c6-1266-43bb-8399-84ede40fd9d7
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Female' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Gender] IN { "Female" }
+			)
+		formatString: 0
+		lineageTag: 55a8c9ac-d242-4839-be89-b14b31929501
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Count of Date of Admission for Male' =
+			
+			CALCULATE(
+				COUNTA('healthcare_project_3'[Date of Admission]),
+				'healthcare_project_3'[Gender] IN { "Male" }
+			)
+		formatString: 0
+		lineageTag: f367865f-00df-45ce-86f6-39bfe1275c3d
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "FilteredMeasure"
+				}
+
+	measure 'Length of Stay' = DATEDIFF(MIN('healthcare_project_3'[Date of Admission]), MAX('healthcare_project_3'[Discharge Date]), DAY)
+		formatString: 0
+		lineageTag: e441406e-d7ad-46c3-ad65-7223d2e06276
+
+	measure 'Average Length of Stay' = AVERAGE('-Measures'[Column])
+		lineageTag: a1c4f76f-5425-4a84-965e-6c18862e9386
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Admission Count' = COUNTROWS('healthcare_project_3')
+		formatString: 0
+		lineageTag: 8ff43b83-4b2e-491c-993c-3908bcce79db
+
+	measure 'Patient Admissions per Condition' =
+			
+			CALCULATE(
+				[Count of Date of Admission for Arthritis]('healthcare_project_3'[Patient ID #]),
+				ALLSELECTED('healthcare_project_3'[Medical Condition])
+			)
+		formatString: 0
+		lineageTag: 2599dec1-425b-4328-a957-442b5da39dfd
+
+		extendedProperty MeasureTemplate =
+				{
+				  "version": 0,
+				  "daxTemplateName": "TotalForSelectedCategory"
+				}
+
+	column Column
+		isHidden
+		formatString: 0
+		lineageTag: 0676d5ad-4b93-4b68-a498-fea705fd90b2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition -Measures = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = f52f309aa07f45a3977681cabc743410
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":""}
+

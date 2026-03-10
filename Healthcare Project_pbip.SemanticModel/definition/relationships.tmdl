@@ -1,0 +1,9 @@
+relationship 2a10d779-d2a4-4a84-ad52-8066a408b67b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: healthcare_project_3.'Discharge Date'
+	toColumn: LocalDateTable_e178b705-2243-4ec1-8c8a-fcf34915aba8.Date
+
+relationship 7caa1051-3abd-9b3f-1ef2-043316a106be
+	fromColumn: healthcare_project_3.'Date of Admission'
+	toColumn: DateTable.Date
+

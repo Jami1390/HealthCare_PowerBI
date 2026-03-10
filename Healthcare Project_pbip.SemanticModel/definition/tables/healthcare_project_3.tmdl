@@ -1,0 +1,228 @@
+table healthcare_project_3
+	lineageTag: 3423b970-43c9-4bf2-a237-78aa0d955a2d
+
+	column Name
+		dataType: string
+		lineageTag: bada2cd9-d04a-4a95-aad5-255bc70cefaf
+		summarizeBy: none
+		sourceColumn: Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: 3f6b83a1-89a9-46b1-b3b4-ba45000c277d
+		summarizeBy: sum
+		sourceColumn: Age
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 998f95fe-cf2c-4446-8d3b-58600532b86c
+		summarizeBy: none
+		sourceColumn: Gender
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Blood Type'
+		dataType: string
+		lineageTag: 17f5d1a7-ea5a-410c-98f1-44df684fdabe
+		summarizeBy: none
+		sourceColumn: Blood Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Medical Condition'
+		dataType: string
+		lineageTag: 2f79be17-a494-4d35-a481-1417f5cbf5e7
+		summarizeBy: none
+		sourceColumn: Medical Condition
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date of Admission'
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: ac35f484-5626-4b8d-a649-f4e243dba21c
+		summarizeBy: none
+		sourceColumn: Date of Admission
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Doctor
+		dataType: string
+		lineageTag: 6e0362ac-d755-4ec7-9aae-be1c1dfbee35
+		summarizeBy: none
+		sourceColumn: Doctor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hospital
+		dataType: string
+		lineageTag: cc799baa-0079-44f8-a3aa-6582af43e38c
+		summarizeBy: none
+		sourceColumn: Hospital
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Insurance Provider'
+		dataType: string
+		lineageTag: 9dd3fb23-4592-468a-9101-be2c59ac3f3c
+		summarizeBy: none
+		sourceColumn: Insurance Provider
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Billing Amount'
+		dataType: decimal
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 0571e17a-a474-43d1-9d59-73c0f538ad7d
+		summarizeBy: sum
+		sourceColumn: Billing Amount
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Room Number'
+		dataType: int64
+		formatString: 0
+		lineageTag: dc9351bb-f08c-48cd-8f67-a3ae7e79e979
+		summarizeBy: sum
+		sourceColumn: Room Number
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Admission Type'
+		dataType: string
+		lineageTag: 03e063b7-b854-4852-8f9c-c77ec0e94a46
+		summarizeBy: none
+		sourceColumn: Admission Type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discharge Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0309cfa5-98b7-4d37-af54-97e180e1ac71
+		summarizeBy: none
+		sourceColumn: Discharge Date
+
+		variation Variation
+			isDefault
+			relationship: 2a10d779-d2a4-4a84-ad52-8066a408b67b
+			defaultHierarchy: LocalDateTable_e178b705-2243-4ec1-8c8a-fcf34915aba8.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Medication
+		dataType: string
+		lineageTag: f67c5d5a-03e2-4f13-9ff7-49494a9c7cbd
+		summarizeBy: none
+		sourceColumn: Medication
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Test Results'
+		dataType: string
+		lineageTag: 7fb307a7-c468-4d30-ae11-7715bc7f3ee6
+		summarizeBy: none
+		sourceColumn: Test Results
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Length of Stay' = DATEDIFF('healthcare_project_3'[Date of Admission], 'healthcare_project_3'[Discharge Date], DAY)
+		formatString: 0
+		lineageTag: bf6dbdfb-94c1-4646-8bf5-8a7f512bdc2e
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Admission Year' = YEAR('healthcare_project_3'[Date of Admission])
+		dataType: string
+		lineageTag: f6b4f03a-80c1-4bde-8880-0b52acf12ba3
+		summarizeBy: none
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Admission Year Text' = FORMAT('healthcare_project_3'[Admission Year], "YYYY")
+		lineageTag: 4c25428a-7aa8-4ca6-89b9-206deb33e919
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Patient ID #'
+		dataType: string
+		lineageTag: 088ccfde-fd5a-4c80-8870-fc167a9be7d6
+		summarizeBy: none
+		sourceColumn: Patient ID #
+
+		annotation SummarizationSetBy = Automatic
+
+	partition healthcare_project_3 = m
+		mode: import
+		source =
+				let
+				    Source = MySQL.Database("localhost:3306", "healthcare_project_3", [ReturnSingleDatabase=true]),
+				    healthcare_project_3_healthcare_data = Source{[Schema="healthcare_project_3",Item="healthcare_data"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(healthcare_project_3_healthcare_data,{{"Billing Amount", Currency.Type}, {"Date of Admission", type date}, {"Discharge Date", type date}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Custom", each let
+				    Combined = Text.Combine({[Name], Text.From([Age]), Date.ToText([Date of Admission], "yyyy-MM-dd")}, "|"),
+				    Base64 = Binary.ToText(Text.ToBinary(Combined, TextEncoding.Utf8), BinaryEncoding.Base64),
+				    // Convert each character into its Unicode code → always numeric → no duplicates
+				    AsciiSequence = List.Transform(Text.ToList(Base64), each Number.ToText(Character.ToNumber(_))),
+				    AllDigits = Text.Combine(AsciiSequence),
+				    IDtext = Text.Start(AllDigits, 12),
+				    ID = Number.FromText(IDtext)
+				in
+				    ID),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Custom",{{"Custom", "Patient ID #"}}),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Renamed Columns",{{"Patient ID #", type text}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Changed Type1",{"Patient ID #", "Name", "Age", "Gender", "Blood Type", "Medical Condition", "Date of Admission", "Doctor", "Hospital", "Insurance Provider", "Billing Amount", "Room Number", "Admission Type", "Discharge Date", "Medication", "Test Results"})
+				in
+				    #"Reordered Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
