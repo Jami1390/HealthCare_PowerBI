@@ -1,2 +1,6 @@
 # HealthCare_PowerBI
 A Power BI Dashboard created using a healthcare dataset for a class project. 
+Predicted/Achieved Target
+
+
+I wanted to create a report that would benefit both aspects of a medical model being revenue and quality of care.  I wanted to dig into what diagnoses had the most admittances, recurring patients, and which gender may have been more likely to present with each condition and how each gender seemed to respond to treatment via indicators such as average length of stay per occurrence as well as the addition of an age parameter. I did find some valuable insights that I believe can be utilized on both sides of the medical spectrum. For example, within the timeline of all the years included in this dataset, I found that Hypertension was not only tied in admitting instances with Asthma but was also one of the highest revenue generating diagnoses treated while not having the highest average duration of hospital stay per occurrence.  Hypertension while often coinciding with Obesity, Obesity was significantly higher in terms of admitting occurrences over hypertension in males and only slightly less than admittances in women but generated less than half the amount of the total billed to insurance providers as Hypertension. 
